@@ -1,7 +1,7 @@
 # ecommerce
 
 
-Milestone 1:
+#Milestone 1:
 
 In this we have seen the demonstration of the MERN
 
@@ -17,7 +17,7 @@ Payment gateway
 
 
 
-Milestone 2:
+#Milestone 2:
 Setting up of the frontend with following commands and packages
 
 tailwind CSS
