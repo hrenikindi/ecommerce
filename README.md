@@ -1,7 +1,7 @@
 # ecommerce
 
 
-Milestone 1:
+# Milestone 1:
 
 In this we have seen the demonstration of the MERN
 
