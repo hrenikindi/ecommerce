@@ -28,3 +28,9 @@ express (npm i express)
 mongoose (npm i mongoose)
 cors (npm i cors)
 nodemon (npm i nodemon)
+
+Milstone 3:
+Setting up of nodejs sevrer and handling the api requests.
+Connect your application to MongoDB to store and manage data.
+connetion between Database and server.
+Error Handler (these handler rectify where has the error occured filename.js)
