@@ -3,7 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import axios from "axios";
-import ValidationFormObject from "../../../validation";
+import ValidationFormObject from "../../validation";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -23,9 +23,9 @@ const Signup = () => {
   };
 
   const validateFields = () => {
-    const nameError = ValidationFormObject.validateName(name);
-    const emailError = ValidationFormObject.validateEmail(email);
-    const passwordError = ValidationFormObject.validatePassword(password);
+    const nameError = ValidationFormObject.validteName(name);
+    const emailError = ValidationFormObject.validteEmail(email);
+    const passwordError = ValidationFormObject.validtePass(password);
 
     const newErrors = {};
     if (nameError !== true) newErrors.name = nameError;
@@ -58,7 +58,7 @@ const Signup = () => {
 
 
 //axios request
-    axios.post("http://10.1.77.124:8000/api/v2/user/create-user", newForm, config).then((res)=>{
+    axios.post("http://localhost:8000/api/v2/user/create-user", newForm, config).then((res)=>{
       console.log(res.data);
     }).catch((err)=>{
       console.log(err);
