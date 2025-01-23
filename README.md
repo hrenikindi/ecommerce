@@ -38,3 +38,13 @@ Setup React-Router for the Present Pages
 Created a multer file for the upload functionality
 When we click submit button, the data will be reflected in console as a json format
 the images will be stored under the uploads 
+
+
+## Milestone 7:
+
+created the login validation using axios
+if user data exist then login success
+
+## Milestone 8:
+
+In this milestone created the product page with the static data and using the tailwindcss
