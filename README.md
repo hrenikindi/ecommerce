@@ -48,3 +48,9 @@ if user data exist then login success
 ## Milestone 8:
 
 In this milestone created the product page with the static data and using the tailwindcss
+
+
+## Milestone 9:
+In this milestone we have learnt how to create a prodcut form and how to handle the product form data using the react hook form and also we have learnt how to create a product form using tailwindcss
+
+Also in this milestone we have seen how to handle/create the side effects of the product.
