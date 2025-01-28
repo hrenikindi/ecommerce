@@ -37,4 +37,5 @@ Setup React-Router for the Present Pages
 ## Milestone 6
 Created a multer file for the upload functionality
 When we click submit button, the data will be reflected in console as a json format
-the images will be stored under the upload
+
+
