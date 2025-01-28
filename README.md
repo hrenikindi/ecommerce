@@ -54,3 +54,7 @@ In this milestone created the product page with the static data and using the ta
 In this milestone we have learnt how to create a prodcut form and how to handle the product form data using the react hook form and also we have learnt how to create a product form using tailwindcss
 
 Also in this milestone we have seen how to handle/create the side effects of the product.
+
+## Milestone 10:
+Creating end point for the products page
+adding multer functionality for the product page
