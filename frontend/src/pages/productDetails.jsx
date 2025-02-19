@@ -54,6 +54,7 @@ const ProductDetails = () => {
         console.error("Error adding to cart:", err);
     }
 };
+
   if (loading)
     return (
       <div className="flex justify-center items-center h-screen">
