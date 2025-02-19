@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-// const bcrypt = require("bcrypt");
-// const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
   name:{
@@ -55,22 +55,22 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    cart: [
-      {
-        productId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Product",
-          required: true,
-        },
-        quantity: {
-          type: Number,
-          required: true,
-          min: [1, "Quantity cannot be less than 1"],
-          default: 1,
-        },
-      },
-    ], 
  },
+ cart: [
+  {
+    productId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product",
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      required: true,
+      min: [1, "Quantity cannot be less than 1"],
+      default: 1,
+    },
+  },
+],
  createdAt:{
   type: Date,
   default: Date.now(),

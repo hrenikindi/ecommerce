@@ -37,7 +37,7 @@ const ProductDetails = () => {
 }, [product]);
 
   const handleIncrement = () => setQuantity((prev) => prev + 1);
-  const handleDecrement = () => setQuantity((prev) => (prev >= 1 ? prev - 1 : 1));
+  const handleDecrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   const addtocart = async () => {
     try {
@@ -54,7 +54,6 @@ const ProductDetails = () => {
         console.error("Error adding to cart:", err);
     }
 };
-
   if (loading)
     return (
       <div className="flex justify-center items-center h-screen">
