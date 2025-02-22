@@ -8,8 +8,6 @@ const CreateProduct = () => {
   const navigate = useNavigate();
   const isEdit = Boolean(id);
 
-  const btnName= isEdit ? "Update":"Createe"
-
   const [images, setImages] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -268,7 +266,7 @@ const handleSubmit = async (e) => {
           type="submit"
           className="w-full mt-6 bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors duration-200"
         >
-          {btnName}
+          Create
         </button>
       </form>
     </div>
