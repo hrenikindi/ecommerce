@@ -88,7 +88,7 @@ router.get("/profile", catchAsyncErrors(async (req, res, next) => {
             phoneNumber: user.phoneNumber,
             avatarUrl: user.avatar.url
         },
-        // addresses: user.addresses,
+        addresses: user.addresses,
     });
 }));
 
