@@ -179,7 +179,7 @@ const OrderConfirmation = () => {
                       <p>Quantity: {item.quantity}</p>
                     </div>
                     <p className="font-bold">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      {(item.price * item.quantity).toFixed(2)}
                     </p>
                   </div>
                 ))
@@ -272,12 +272,12 @@ const OrderConfirmation = () => {
               {orderDetails.map((order, index) => (
                 <div key={index} className="mb-6">
                   <h3 className="text-xl font-semibold">Order #{index + 1}</h3>
-                  <p>Total Amount: ${order.totalAmount}</p>
+                  <p>Total Amount: {order.totalAmount}</p>
                   <h4 className="font-medium mt-4">Items:</h4>
                   <ul className="list-disc ml-6">
                     {order.orderItems.map((item, i) => (
                       <li key={i}>
-                        {item.name} - {item.quantity} x ${item.price}
+                        {item.name} - {item.quantity} x {item.price}
                       </li>
                     ))}
                   </ul>

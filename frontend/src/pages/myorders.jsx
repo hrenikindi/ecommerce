@@ -2,19 +2,21 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from '../components/auth/nav';
 import { FaBox, FaShippingFast, FaTimesCircle } from 'react-icons/fa';
-
+import { useSelector } from "react-redux";
 const MyOrdersPage = () => {
     const [orders, setOrders] = useState([]);
-    const defaultEmail = 'priya@gmail.com';
+     // Get the email from Redux state
+     const email = useSelector((state) => state.user.email);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
     const fetchOrders = async () => {
+        if (!email) return; // Only fetch if email is available
         try {
             setLoading(true);
             setError('');
             const response = await axios.get('http://localhost:8000/api/v2/orders/myorders', {
-                params: { email: defaultEmail },
+                params: { email},
             });
             setOrders(response.data.orders);
         } catch (err) {
@@ -41,7 +43,7 @@ const MyOrdersPage = () => {
 
     useEffect(() => {
         fetchOrders();
-    }, []);
+    }, [email]);
 
     return (
         <>
@@ -65,7 +67,7 @@ const MyOrdersPage = () => {
                                             <p className="text-lg font-semibold flex items-center gap-2">
                                                 <FaBox className="text-indigo-600" /> Order ID: <span className="font-light text-sm">{order._id}</span>
                                             </p>
-                                            <p className="text-2xl font-bold text-green-600">${order.totalAmount}</p>
+                                            <p className="text-2xl font-bold text-green-600">{order.totalAmount}</p>
                                         </div>
 
                                         <div className="mb-4">
@@ -85,7 +87,7 @@ const MyOrdersPage = () => {
                                             <h2 className="text-xl font-semibold mb-2">Items</h2>
                                             <ul className="list-disc ml-8 space-y-1 text-gray-700">
                                                 {order.orderItems.map((item, index) => (
-                                                    <li key={index}>{item.name} - Qty: {item.quantity} - ${item.price}</li>
+                                                    <li key={index}>{item.name} - Qty: {item.quantity} - {item.price}</li>
                                                 ))}
                                             </ul>
                                         </div>

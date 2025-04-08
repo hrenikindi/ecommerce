@@ -27,7 +27,7 @@ const Product = ({ _id,name, images, description, price }) => {
         <p className="text-sm text-gray-600 text-center mb-4">{description}</p>
       </div>
       <div className="w-full text-center">
-        <p className="text-lg font-bold text-gray-900 mb-4">${price.toFixed(2)}</p>
+        <p className="text-lg font-bold text-gray-900 mb-4">{price.toFixed(2)}</p>
         <button className="text-white bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full transition-all" 
          onClick={() => navigate(`/product/${_id}`)}
         >

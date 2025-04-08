@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import AddressCard from "../components/auth/AddressCard";
 import Nav from "../components/auth/nav";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 export default function Profile() {
+	const email = useSelector((state) => state.user.email);
 	const [personalDetails, setPersonalDetails] = useState({
 		name: "",
 		email: "",
@@ -15,8 +16,9 @@ export default function Profile() {
 	const [addresses, setAddresses] = useState([]);
 
 	useEffect(() => {
+		if (!email) return;
 		fetch(
-			`http://localhost:8000/api/v2/user/profile?email=${"priya@gmail.com"}`,
+			`http://localhost:8000/api/v2/user/profile?email=${email}`,
 			{
 				method: "GET",
 				headers: {
@@ -36,7 +38,7 @@ export default function Profile() {
 				console.log("User fetched:", data.user);
 				console.log("Addresses fetched:", data.addresses);
 			});
-	}, []);
+	}, [email]);
 
 	const handleAddAddress = () => {
 		navigate("/create-address");

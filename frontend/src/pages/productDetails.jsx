@@ -4,6 +4,7 @@ import axios from "axios";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { Loader, AlertCircle } from "lucide-react";
 import Nav from '../components/auth/nav'
+import { useSelector } from "react-redux";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -11,7 +12,8 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const email="priya@gmail.com"
+   // Get the email from Redux state
+   const email = useSelector((state) => state.user.email);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -122,7 +124,7 @@ const ProductDetails = () => {
 									</div>
 			)}
           <div className="flex items-center space-x-6 my-4">
-            <p className="text-2xl font-semibold text-indigo-600">${product.price}</p>
+            <p className="text-2xl font-semibold text-indigo-600">{product.price}</p>
             <div className="flex items-center border rounded-lg px-3 py-1">
               <button onClick={handleDecrement} className="p-2 text-gray-700 hover:bg-gray-200 rounded-full">
                 <IoIosRemove size={20} />
