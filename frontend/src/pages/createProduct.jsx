@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import axios from 'axios';
+import axios from "../axiosConfig";
 import { useParams, useNavigate } from "react-router-dom";
 import Nav from '../components/auth/nav'
 const CreateProduct = () => {

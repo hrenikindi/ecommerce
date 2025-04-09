@@ -85,7 +85,7 @@ export default function CartProduct({ _id, name, images, quantity, price }) {
 
             <div className="flex flex-col items-start md:items-end mt-4 md:mt-0">
                 <h2 className="text-lg font-semibold text-neutral-800">{name}</h2>
-                <p className="text-xl font-bold text-green-600">{price * quantityVal}</p>
+                <p className="text-xl font-bold text-green-600">${price * quantityVal}</p>
             </div>
         </div>
     );

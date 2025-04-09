@@ -1,20 +1,20 @@
 // SelectAddress.jsx
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Nav from '../components/auth/nav'; // Ensure correct casing
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'; // Import useSelector
+import axios from '../axiosConfig';
 const SelectAddress = () => {
     const [addresses, setAddresses] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-     // Retrieve email from Redux state
-     const userEmail = useSelector((state) => state.user.email);
+    // Replace with dynamic email in production
+    const userEmail = useSelector((state) => state.user.email);
 
     useEffect(() => {
-        if (!userEmail) return;  //M32
+        if (!userEmail) return;
         const fetchAddresses = async () => {
             try {
                 const response = await axios.get('http://localhost:8000/api/v2/user/addresses', {
